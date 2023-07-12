@@ -19,12 +19,17 @@ public class SeleniumMethods {
 		
 	}
 	
-	public boolean isElementPresent(By locator) {
-		return driver.findElement(locator).isDisplayed();
+	public boolean isElementPresent(String locator) {
+		return driver.findElement(By.id(locator)).isDisplayed();
 	}
 	
-	public String getText(By locator) {
-		return driver.findElement(locator).getText();
+	public String getText(String locator) {
+		return driver.findElement(By.id(locator)).getText();
 	}
-
+	public void sendText(String locator,String text) {
+		driver.findElement(By.id(locator)).sendKeys(text);
+	}
+	public void clearTextBox(String locator) {
+		driver.findElement(By.id(locator)).clear();
+	}
 }
