@@ -50,6 +50,14 @@ Scenario: Validate total value when decimal values are present
 	When Values are visible
 
 	Then Total should be same 
+	
+Scenario: Validate total value when all the individual values are zero decimals
+	
+	Given Individual values are zero with decimals
+
+	When Values are visible
+
+	Then Total should be zero
 
 Scenario: Summary Page labels validations
 
